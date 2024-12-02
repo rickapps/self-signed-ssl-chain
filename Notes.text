@@ -27,3 +27,8 @@ So now you're thinking, "I could buy a certificate for my domain, then use that 
 When you purchase your SSL certificate, you install the certificate on your web server. You may need to install intermediate certificates as well if they are not already installed on your web server. In addition, you install the private key for your SSL certificate on your web server. You do not install private keys for intermediate certificates. Unless you are creating your own SSL certificate chain, you do not have the private keys for the intermediate certificates. They are closely guarded secrets of the companies that sell SSL certificates. 
 
 Private keys are used to decode encrypted text. Public keys are used to encode text. Your SSL certificate is a file that contains your public key as well as information about your identity, the time period the certificate is valid, and other information. A web browser will extract the public key from your certificate and use the key to encode the information it sends to your website. Your website uses the private key to decode this information. As long as no one else has access to your private key, your website is the only entity that can decode information encoded with your public key. A private key can also be used to encode a hash of your certificate file. 
+
+Tasks -
+Command file to create a cert chain
+command file to renew a cert - inputs are expired cert and private key
+command file to install a root cert on system
