@@ -1,0 +1,6 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+extKeyUsage=serverAuth
+keyUsage=digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment
+subjectIdentifier=hash
+

@@ -5,6 +5,19 @@ read -p "Name of your company?" company_name
 read -p "Password for private key?" password
 read -p "Your email address?" email_address
 
+# Create our three private/public key pairs; root, intermediate, enduser
+# All three files will be encrypted with the same password.
+openssl genrsa -des3 -passout pass:$password -out rootCA_key.pem 4096
+openssl genrsa -des3 -passout pass:$password -out intermediate_key.pem 4096
+openssl genrsa -des3 -passout pass:$password -out enduser_key.pem 4096
+
+# Create three certificate signing requests.
+openssl req -new -key rootCA_key.pem -out rootCA.csr -subj "/C=US/ST=Colorado/L=Denver/O=My Excellent Company/OU=IT Department/CN=mydomain.com"
+openssl req -new -key intermediate_key.pem -out intermediate.csr -subj "/C=US/ST=Colorado/L=Denver/O=My Excellent Company/OU=IT Department/CN=mydomain.com"
+openssl req -new -key enduser_key.pem -out enduser.csr -subj "/C=US/ST=Colorado/L=Denver/O=My Excellent Company/OU=IT Department/CN=mydomain.com"
+
+exit 1
+
 # Create a private key that is used to sign the root cert. Store in file ca.key
 openssl genrsa -out ca.key 4096
 # Create self-signed root cert

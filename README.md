@@ -9,3 +9,8 @@ Create SSL certificates for private domains that are automatically trusted by al
 - Notes.txt:
 
 
+
+### Other sources of information ###
+- [Adding X.509 extensions to your certificates](https://www.golinuxcloud.com/add-x509-extensions-to-certificate-openssl/)
+- [OpenSSL Command Cheatsheet](https://www.freecodecamp.org/news/openssl-command-cheatsheet-b441be1e8c4a/)
+-
