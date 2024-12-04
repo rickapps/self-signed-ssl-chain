@@ -1,9 +1,15 @@
 #!/bin/bash
-root_authority_name="Personal Intranet Root"
-intermediate_authority_name="Personal Intermediate Cert"
+country_code="US"
+state_province="Colorado"
+city_town="Denver"
+dept_name="SSL/TLS"
+
 read -p "Name of your company?" company_name
-read -p "Password for private key?" password
+read -p "Domain name to for your intranet?" domain_name
 read -p "Your email address?" email_address
+
+root_CA_name= "${company_name} Root CA"
+intermediate_CA_name= "${company_name} Intermediate CA"
 
 # Create our three private/public key pairs; root, intermediate, enduser
 # All three files will be encrypted with the same password.
@@ -12,9 +18,9 @@ openssl genrsa -des3 -passout pass:$password -out intermediate_key.pem 4096
 openssl genrsa -des3 -passout pass:$password -out enduser_key.pem 4096
 
 # Create three certificate signing requests.
-openssl req -new -key rootCA_key.pem -out rootCA.csr -subj "/C=US/ST=Colorado/L=Denver/O=My Excellent Company/OU=IT Department/CN=mydomain.com"
-openssl req -new -key intermediate_key.pem -out intermediate.csr -subj "/C=US/ST=Colorado/L=Denver/O=My Excellent Company/OU=IT Department/CN=mydomain.com"
-openssl req -new -key enduser_key.pem -out enduser.csr -subj "/C=US/ST=Colorado/L=Denver/O=My Excellent Company/OU=IT Department/CN=mydomain.com"
+openssl req -new -key rootCA_key.pem -out rootCA.csr -subj "/C=$country_code/ST=$state_province/L=$city_town/O=$company_name/OU=$dept_name/CN=$root_CA_name"
+openssl req -new -key intermediate_key.pem -out intermediate.csr -subj "/C=$country_code/ST=$state_province/L=$city_town/O=$company_name/OU=$dept_name/CN=$intermediate_CA_name"
+openssl req -new -key enduser_key.pem -out enduser.csr -subj "/C=$country_code/ST=$state_province/L=$city_town/O=$company_name/OU=$dept_name/CN=$domain_name"
 
 exit 1
 

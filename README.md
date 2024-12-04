@@ -5,8 +5,11 @@ Create SSL certificates for private domains that are automatically trusted by al
 **openssl:** Version 3.2.2 or later. You can download openssl from [OpenSSL Foundation](https://openssl-foundation.org) if it's not already present on your machine. The included shell scripts are for linux, but the openssl commands contained can be easily copied to Windows.
 
 ### Description of Files ###
-- self-signed-cert.sh:
-- Notes.txt:
+- **self-signed-cert.sh:** Bash shell script to create the certificate chain
+- **rootCA.ext:** X.509 Extensions required for a root certificate
+- **intermediate.ext:** X.509 Extensions that allow a cert to sign other certs
+- **enduser.ext:** Recommended X.509 extensions for a server certificate
+- **Notes.txt:** The notes used to create this project
 
 
 
