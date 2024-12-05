@@ -1,5 +1,5 @@
 ### Overview ###
- Create your own trusted SSL (TLS) certificates for intranet websites. Create and add additional SSL certificates  without needing to update all web browsers in the organization. Structure the SSL certificate chains to mimic public internet websites so your private intranet can reliably be used for development and testing of internet websites. 
+ Create your own **trusted** SSL (TLS) certificates for intranet websites. Create and add additional SSL certificates  without needing to update all web browsers in the organization. Structure the SSL certificate chains to mimic public internet websites so your private intranet can reliably be used for development and testing of internet websites. 
 
 ### Method ###
 Create a root CA one time and install it to all the machines on your network. After that task is complete, you can issue multiple SSL certificates that will automatically be trusted by all the web browsers on your network. This project and the accompaning gists will provide all the information you need to create and install trusted certificates.                          
@@ -18,4 +18,6 @@ Create a root CA one time and install it to all the machines on your network. Af
 ### Other sources of information ###
 - [Adding X.509 extensions to your certificates](https://www.golinuxcloud.com/add-x509-extensions-to-certificate-openssl/)
 - [OpenSSL Command Cheatsheet](https://www.freecodecamp.org/news/openssl-command-cheatsheet-b441be1e8c4a/)
--
+- [How Certificate Chains Work](https://gist.github.com/rickapps/46d6735f6cef593807939b617f1c900a)
+- [How to Create SSL Certificate Chains](https://gist.github.com/rickapps/46d6735f6cef593807939b617f1c900a)
+- Self-signed Certificates your Browser will Trust
