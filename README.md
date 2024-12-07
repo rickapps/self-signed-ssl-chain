@@ -19,5 +19,5 @@ Create a root CA one time and install it to all the machines on your network. Af
 - [Adding X.509 extensions to your certificates](https://www.golinuxcloud.com/add-x509-extensions-to-certificate-openssl/)
 - [OpenSSL Command Cheatsheet](https://www.freecodecamp.org/news/openssl-command-cheatsheet-b441be1e8c4a/)
 - [How Certificate Chains Work](https://gist.github.com/rickapps/46d6735f6cef593807939b617f1c900a)
-- [How to Create SSL Certificate Chains](https://gist.github.com/rickapps/46d6735f6cef593807939b617f1c900a)
-- Self-signed Certificates your Browser will Trust
+- [How to Create SSL Certificate Chains](https://gist.github.com/rickapps/6a4381b72c0353649786db54ea401aee)
+- How to Install a Root Cert to your Web Browser
