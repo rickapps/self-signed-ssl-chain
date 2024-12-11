@@ -1,8 +1,9 @@
 #!/bin/bash
+# Edit the four lines below to suit 
 country_code="US"
 state_province="Colorado"
 city_town="Denver"
-dept_name="SSL\ /TLS"
+dept_name="SSL\/TLS"
 
 read -p "Name of your company?" company_name
 read -p "Domain name to for your intranet?" domain_name
@@ -29,7 +30,7 @@ openssl x509 -req -in rootCA.csr -key rootCA_key.pem -passin pass:$password -day
 # Create the intermediate certificate. X.509 extension CA:TRUE must also be applied to this certificate so it can sign others.
 openssl x509 -CA rootCA.crt -CAkey rootCA_key.pem -passin pass:$password -days 1825 -req -in intermediate.csr -out intermediate.crt -extfile intermediate.ext
 # Create the enduser cert signed by the intermediate cert.
-openssl x509 -CA intermediate.crt -CAkey intermedate_key.pem -passin pass:$password -days 730 -req -in enduser.csr -out enduser.crt -extfile enduser.ext
+openssl x509 -CA intermediate.crt -CAkey intermediate_key.pem -passin pass:$password -days 730 -req -in enduser.csr -out enduser.crt -extfile enduser.ext
 
 # Convert the root cert to a pem file so it can be added to the trusted store
 # Copy the pem file to /etc/pki/ca-trust/source/anchors, then run update-ca-trust

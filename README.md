@@ -7,6 +7,11 @@ Create a root CA one time and install it to all the machines on your network. Af
 ### Environment ###
 **openssl:** Version 3.2.2 or later. You can download openssl from [OpenSSL Foundation](https://openssl-foundation.org) if it's not already present on your machine. The included bash shell scripts are for linux, but the openssl commands contained will be the same for Windows.
 
+### Instructions ###
+Edit the four lines at the top of create-certificate-chain.sh to suit your situation.
+Set executable permisions on the file and run. The script will create three SSL certificates, root, intermediate, and enduser. It will create three password protected private key files.
+It will create a pem file containing a copy of your root certificate.
+
 ### Description of Files ###  
 - **create-certificate-chain.sh:** Bash shell script to create the certificate chain
 - **create-enduser-certificate.sh** Bash shell script to create additional certificates
