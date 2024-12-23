@@ -18,7 +18,16 @@ case $yn in
 esac
 done
 read -p "Your email address? " email_address
+while true; do
 read -p "Enter the password you want to use for private key files: " password
+# verify the password
+read -p "Enter the password again: " password2
+if [ "$password" == "$password2" ]; then
+break
+else
+echo "Passwords do not match. Try again."
+fi
+done
 
 root_CN_name=${company_name}" Root CA"
 intermediate_CN_name=${company_name}" Intermediate CA"
