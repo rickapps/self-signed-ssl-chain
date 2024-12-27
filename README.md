@@ -25,4 +25,4 @@ It will create a pem file containing a copy of your root certificate.
 - [OpenSSL Command Cheatsheet](https://www.freecodecamp.org/news/openssl-command-cheatsheet-b441be1e8c4a/)
 - [How Certificate Chains Work](https://gist.github.com/rickapps/46d6735f6cef593807939b617f1c900a)
 - [How to Create SSL Certificate Chains](https://gist.github.com/rickapps/6a4381b72c0353649786db54ea401aee)
-- How to Install a Root Cert to your Web Browser
+- [How to Install a Root Cert to your Web Browser](https://gist.github.com/rickapps/e115dc2eba787529d3633b2a5400ffb4)
